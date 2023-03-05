@@ -5,7 +5,7 @@ To run the program properly, first you will need to install Flutter and Dart.
 
 After you have downloaded the file and extracted it to an easily accessible place, open the "flutter" folder and run the "flutter_console.bat" file \(Double click\).
 
-Once in the Flutter console, run the command "flutter doctor". This should display all the required dependencies required to run a Flutter program, whether ou already have them installed or not. The two most common dependencies that are not already installed are Visual Studio code with "Desktop Development with C++" and Android Studio with command line tools. If your "flutter doctor" command passes with no issues, skip to the bottom step.
+Once in the Flutter console, run the command "flutter doctor". This should display all the required dependencies required to run a Flutter program, whether you already have them installed or not. The two most common dependencies that are not already installed are Visual Studio code with "Desktop Development with C++" and Android Studio with command line tools. If your "flutter doctor" command passes with no issues, skip to the bottom step.
 
 - [Install Visual Studios Community Edition](https://visualstudio.microsoft.com/vs/)
 - [Install Android Studio Electric Eel](https://developer.android.com/studio)
