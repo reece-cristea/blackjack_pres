@@ -40,22 +40,26 @@ class _BlackJackState extends State<BlackJack> {
   int calculateScore(List<String> hand) {
     int score = 0;
     bool hasAce = false;
+
     for (var i = 0; i < hand.length; i++) {
-      if (hand[i] == "A") {
-        hasAce = true;
+      if (hand[i] != "K" &&
+          hand[i] != "Q" &&
+          hand[i] != "J" &&
+          hand[i] != "A") {
+        score += int.parse(hand[i]);
       } else {
-        if (hand[i] != "K" && hand[i] != "Q" && hand[i] != "J") {
-          score += int.parse(hand[i]);
+        if (hand[i] == "A") {
+          hasAce = true;
         } else {
           score += 10;
         }
       }
-      if (hasAce) {
-        if (score + 11 > 21) {
-          score += 1;
-        } else {
-          score += 11;
-        }
+    }
+    if (hasAce) {
+      if ((score + 11) > 21) {
+        score += 1;
+      } else {
+        score += 11;
       }
     }
     return score;
@@ -150,19 +154,25 @@ class _BlackJackState extends State<BlackJack> {
                       dealerCardVals.add(deck.last);
                       dealerCards.add(BlackJackCard(cardValue: deck.last));
                       deck.removeLast();
+                      dealerScore = calculateScore(dealerCardVals);
                     }
-                    dealerScore = calculateScore(dealerCardVals);
-                    if (dealerScore > playerScore && dealerScore <= 21) {
+                    if (calculateScore(dealerCardVals) > 21) {
                       setState(() {
-                        gameStatus = "You Lost!";
+                        gameStatus = "Dealer busts! You win!";
                       });
-                    } else if (dealerScore < playerScore || dealerScore > 21) {
+                    } else if (calculateScore(dealerCardVals) >
+                        calculateScore(playerCardVals)) {
                       setState(() {
-                        gameStatus = "You Won!";
+                        gameStatus = "Dealer wins!";
+                      });
+                    } else if (calculateScore(playerCardVals) >
+                        calculateScore(dealerCardVals)) {
+                      setState(() {
+                        gameStatus = "You win!";
                       });
                     } else {
                       setState(() {
-                        gameStatus = "You tied!";
+                        gameStatus = "It's a tie!";
                       });
                     }
                   }
