@@ -8,7 +8,7 @@ After you have downloaded the file and extracted it to an easily accessible plac
 Once in the Flutter console, run the command "flutter doctor". This should display all the required dependencies required to run a Flutter program, whether ou already have them installed or not. The two most common dependencies that are not already installed are Visual Studio code with "Desktop Development with C++" and Android Studio with command line tools. If your "flutter doctor" command passes with no issues, skip to the bottom step.
 
 - [Install Visual Studios Community Edition](https://visualstudio.microsoft.com/vs/)
-- [Instal Android Studio Electric Eel](https://developer.android.com/studio)
+- [Install Android Studio Electric Eel](https://developer.android.com/studio)
 
 At the end of the Visual Studios installation process, you will be prompted with specific modules from Visual Studios that you would like to install, make sure you check the "Desktop Development with C++" module under the Desktop & Mobile ection before finishing your installation. If you already have Visual Studio installed, open the Visual Studio Installer and click modify on the current version that you have installed. From there you can apply the "Desktop Development with C++" module.
 
